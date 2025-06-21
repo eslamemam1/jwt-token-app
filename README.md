@@ -84,6 +84,64 @@ ng serve
 
 ---
 
+## 🌐 Proxy Configuration (Development - CORS Handling)
+
+To handle CORS issues during local development, this project uses a **proxy configuration**.
+
+### 🔁 Why?
+
+Since the API (https://freeapi.miniprojectideas.com) is on a different origin, direct calls from Angular may be blocked due to CORS.  
+Using a proxy lets Angular redirect API calls locally to bypass this issue.
+
+---
+
+### ⚙️ proxy.conf.json
+
+Create a file called `proxy.conf.json` in your project root with the following content:
+
+```json
+{
+  "/api": {
+    "target": "https://freeapi.miniprojectideas.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
+```
+
+---
+
+### 🧪 Example
+
+Instead of calling the full URL:
+
+```ts
+this.http.get("https://freeapi.miniprojectideas.com/api/User/GetAllUsers");
+```
+
+You just call:
+
+```ts
+this.http.get("/api/User/GetAllUsers");
+```
+
+Angular will automatically proxy the request during development.
+
+---
+
+### ▶️ Running with Proxy
+
+To use the proxy while serving your Angular app:
+
+```bash
+ng serve --proxy-config proxy.conf.json
+```
+
+This will start the development server and redirect `/api` calls to the Swagger API.
+
+---
+
 ## 🙌 Author
 
 **Eslam Emam**  
