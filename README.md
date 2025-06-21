@@ -1,60 +1,90 @@
-# JwtTokenApp
+# 📘 Project Title
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+### Angular Dashboard App with JWT Authentication & Swagger API Integration
 
-## Development server
+---
 
-To start a local development server, run:
+## 📋 Description
+
+This is a simple Angular application that:
+
+- Fetches users' data from a public Swagger-based API.
+- Uses JWT token for protected route access.
+- Implements route guards (`authGuard`) to restrict access to authenticated users only.
+- Displays user statistics in a modern dashboard UI using Tailwind CSS.
+
+---
+
+## 🌐 Live API Source
+
+Data is fetched from the following public API:
+
+🔗 **Swagger UI**:  
+[https://freeapi.miniprojectideas.com/index.html](https://freeapi.miniprojectideas.com/index.html)
+
+---
+
+## 🔐 Authentication
+
+The app uses a **JWT token** obtained from Swagger UI authorization:
+
+- You can manually copy the token from Swagger's "Authorize" button.
+- Then paste it into `localStorage` under the key: `token`.
+
+```ts
+// Example (set manually for testing)
+localStorage.setItem("token", "your-jwt-token");
+```
+
+---
+
+## 🚀 Features
+
+- ✅ Angular Standalone Components
+- ✅ Route Guard (`authGuard`) for protecting routes
+- ✅ JWT Authorization Header via Angular Interceptor
+- ✅ Data fetched via HttpClient from Swagger API
+- ✅ Responsive Dashboard UI
+- ✅ Login/logout logic with token handling
+
+---
+
+## 🛠 Technologies Used
+
+- Angular 17+ (Standalone Components)
+- Tailwind CSS
+- Swagger (API source)
+- JWT Authentication
+- TypeScript
+
+---
+
+## 📂 Project Structure
+
+```
+/src
+ ├── app
+ │    ├── about/
+ │    ├── dashboard/
+ │    ├── guards/
+ │    ├── interceptor/
+ │    ├── login/
+ │    ├── not-found/
+ │    └── app.routes.ts
+```
+
+---
+
+## ✅ Run the Project
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🙌 Author
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# jwt-token-app
+**Eslam Emam**  
+Frontend Developer & Content Creator
